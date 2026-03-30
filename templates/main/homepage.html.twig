@@ -9,7 +9,7 @@
     <p> Nous possédons une flotte de {{ ships|length }} vaisseaux spaciaux ! </p>
     {% if ships|length > 400 %}
         <p>
-            C'est une flotte TAHHHHH immense !!!!
+            C'est une flotte immense !!!!
         </>
     {% endif %}
 </div>
@@ -18,7 +18,11 @@
     <table>
         <tr>
             <th>Name</th>
-            <td>{{ myShip.name }}</td>
+            <td>
+                <a href="{{ path('app_starship_show', { id: myShip.id }) }} ">
+                    {{ myShip.name }}
+                </a>
+            </td>
         </tr>
         <tr>
             <th>Class</th>
