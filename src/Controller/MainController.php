@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class MainController extends AbstractController
 {
-    #[Route]
+    #[Route('/home', name:'app_home')]
     public function HomePage(StarshipRepository $starshipRepository) : Response
     {
         $ships = $starshipRepository->findAll();
