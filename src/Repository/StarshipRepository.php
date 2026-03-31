@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Model\Starship;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
+use App\Model\StarshipStatusEnum;
 
 class StarshipRepository
 {
@@ -24,7 +25,7 @@ class StarshipRepository
                 'Millenium Falcon',
                 'YT-1300 light freighter',
                 'Fildrong',
-                'Operational'
+                StarshipStatusEnum::IN_PROGRESS
             ),
 
             new Starship(
@@ -32,7 +33,7 @@ class StarshipRepository
                 'X-Wing',
                 'T-65B X-wing starfighter',
                 'Luke Skywalker',
-                'Operational'
+                StarshipStatusEnum::COMPLETED
             ),
             
             new Starship(
@@ -40,7 +41,7 @@ class StarshipRepository
                 'TIE Fighter',
                 'Twin Ion Engine/Ln Starfighter',
                 'Darth Vader',
-                'Operational'
+                StarshipStatusEnum::WAITING
             ),
         ];
 
@@ -55,21 +56,21 @@ class StarshipRepository
                     'Millenium Falcon',
                     'YT-1300 light freighter',
                     'Fildrong',
-                    'Operational'
+                    StarshipStatusEnum::IN_PROGRESS
                 ),
                 2 => new Starship(
                     2,
                     'X-Wing',
                     'T-65B X-wing starfighter',
                     'Luke Skywalker',
-                    'Operational'
+                    StarshipStatusEnum::COMPLETED
                 ),
                 3 => new Starship(
                     3,
                     'TIE Fighter',
                     'Twin Ion Engine/Ln Starfighter',
                     'Darth Vader',
-                    'Operational'
+                    StarshipStatusEnum::WAITING
                 ),
                 default => null
             };
